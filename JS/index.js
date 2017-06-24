@@ -1,6 +1,7 @@
-$(document).ready(function(){
+
+ $(document).ready(function(){
 //listen for form submit or submit-btn click 
-$('#submit-btn').click(changeBackground);
+    $('#submit-btn').click(changeBackground);
 
 
 //change background
@@ -14,23 +15,21 @@ $('#submit-btn').click(changeBackground);
 //if it is change the body background image
 
 
-function changeBackground(){
-	event.preventDefault();
+    function changeBackground(){
+        event.preventDefault();
+        //get the city-type value
+        var city = $('#city-type').val();
 
-	//get the city-type value
-	var city = $('#city-type').val();
+        if(city === "New York" || city === "New York City" || city === "NYC"){
 
-	if(city === "New York" || city === "New York City" || city === "NYC"){
+            $("body").addClass("nyc");
+        }
+    
+    		else if(city === "Los Angeles" || city === "LA" || city === "LAX"){
+				$("body").addClass("la");
+		}
 
-		$("body").css("nyc");}
-	}
-  
-
-	
-//Los Angeles" or "LA" or "LAX"
-
-
-
+    }
 
 
 });
